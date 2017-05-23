@@ -1,0 +1,21 @@
+{
+  "name": "umi-application",
+  "version": "3.0.0",
+  "private": true,
+  "main": "",
+  "author": "",
+  "description": "",
+  "scripts": {
+    "install": "echo \"Error: you have to be in client or server directory to install packages.\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cobelt/cobelt-application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cobelt/cobelt-application/issues"
+  },
+  "homepage": "https://github.com/Cobelt/cobelt-application#readme",
+  "dependencies": {}
+}

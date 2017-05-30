@@ -1,0 +1,28 @@
+<div class="row">
+  <form class="col s3" novalidate [formGroup]="userForm" (ngSubmit)="signup(userForm)">
+    <div class="container">
+      <h1>Sign up to UMI</h1>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" formControlName="email"
+                 [ngClass]="{invalid: userForm.get('email').errors && userForm.get('email').touched}">
+          <label for="email" [attr.data-error]="errorsMessages['email']">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" formControlName="password"
+                 [ngClass]="{invalid: userForm.get('password').errors && userForm.get('password').touched}">
+          <label for="password" [attr.data-error]="errorsMessages['password']">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-btn col s12">
+          <button id="menu" type="submit" class="waves-effect waves-light btn tooltipped" [disabled]="userForm.invalid"
+                  data-position="right" data-delay="5" data-tooltip="You'll receive an email">Sign up
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

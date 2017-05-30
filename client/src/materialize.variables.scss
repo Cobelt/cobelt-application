@@ -1,0 +1,40 @@
+// ==========================================================================
+// Materialize variables override
+// ==========================================================================
+//
+// * Les variables à surcharger sont disponibles dans le fichier :
+// * ../node_modules/materialize-css/sass/components/_variables.scss
+//
+//
+// Table of contents
+//
+//  1. Colors
+//  20. Typography
+//
+
+
+// 1. Colors
+// ==========================================================================
+
+$primary-color: #0B90C6;
+$secondary-color: #F79323;
+
+// 16. Spinners | Loaders
+// ==========================================================================
+$spinner-default-color: $secondary-color !default;
+
+
+// 20. Typography
+// ==========================================================================
+
+$h1-fontsize: 4.2rem !default;
+$h2-fontsize: 3.56rem !default;
+$h3-fontsize: 2.92rem !default;
+$h4-fontsize: 2.28rem !default;
+$h5-fontsize: 1.64rem !default;
+$h6-fontsize: 1rem !default;
+
+//======================================================================================================================
+// Loading of Materialize :
+$roboto-font-path: "~/materialize-css/fonts/roboto/"; // Eq. "../node_modules/materialize-css/fonts/roboto/"
+@import "~materialize-css/sass/materialize";

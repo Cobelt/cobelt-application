@@ -1,0 +1,79 @@
+<ul class="steps-innovation">
+  <li>
+    <strong>1</strong>
+    <a href="" ui-sref="invention.edit({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.EDIT' | translate }}--></a>
+  </li>
+
+  <li>
+    <strong>2</strong>
+    <a href="" ui-sref="invention.settings({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.SETTING' | translate }}--></a>
+  </li>
+
+  <li class="active">
+    <strong>3</strong>
+    <a href="" ui-sref="invention.infographic({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.REPORT' | translate }}--></a>
+  </li>
+</ul>
+
+
+<div class="text-center" ng-if="invention.status === INVENTION_STATE.EDITING">
+  <h1><!--{{ 'INVENTION.INFOGRAPHICS.EDITING.TITLE' | translate }}--></h1>
+
+  <p class="explanation"><!--{{ 'INVENTION.INFOGRAPHICS.EDITING.DESC' | translate }}--></p>
+
+  <img src="images/invention/tom-hanks-editing.gif" alt="" width="" height="">
+</div>
+
+<div class="text-center" ng-if="invention.status === INVENTION_STATE.SUBMITTED">
+  <h1><!--{{ 'INVENTION.INFOGRAPHICS.SUBMITTED.TITLE' | translate }}--></h1>
+
+  <p class="explanation"><!--{{ 'INVENTION.INFOGRAPHICS.SUBMITTED.DESC' | translate }}--></p>
+
+  <img src="images/invention/waiting.gif" alt="" width="" height="">
+</div>
+
+
+<div ng-if="invention.status === INVENTION_STATE.EVALUATING_DONE || invention.status === INVENTION_STATE.EVALUATING">
+
+  <div class="text-center">
+
+    <div class="innovation-card-tools">
+      <pdf-generator model="jobModelBasic">
+        <a href="">
+          <img src="images/invention/cloud-download.svg" alt="" width="" height="" ng-hide="compilingStatus['infographics_basic']">
+          <i class="fa fa-spinner fa-pulse fa-fw" ng-show="compilingStatus['infographics_basic']" aria-hidden="true"></i>
+          <!--{{'BTN.EXPORT_STANDARD' | translate}}-->
+        </a>
+      </pdf-generator>
+
+      <pdf-generator model="jobModelBranding">
+        <a href="">
+          <img src="images/invention/cloud-download.svg" alt="" width="" height="" ng-hide="compilingStatus['infographics_branding']">
+          <i class="fa fa-spinner fa-pulse fa-fw" ng-show="compilingStatus['infographics_branding']" aria-hidden="true"></i>
+          <!--{{'BTN.EXPORT_PRINT' | translate}}-->
+        </a>
+      </pdf-generator>
+
+      <!--<pdf-generator model="jobModelPrint">
+          <a href="">
+              <img src="images/invention/cloud-download.svg" alt="" width="" height="" ng-hide="compilingStatus['infographics_print']">
+              <i class="fa fa-spinner fa-pulse fa-fw" ng-show="compilingStatus['infographics_print']" aria-hidden="true"></i>
+              {{'BTN.EXPORT_PRINT' | translate}}
+          </a>
+      </pdf-generator>-->
+
+      <pdf-generator model="jobResponsesModel">
+        <a href="">
+          <img src="images/invention/cloud-download.svg" alt="" width="" height="" ng-hide="compilingStatus['responsesReport_basic']">
+          <i class="fa fa-spinner fa-pulse fa-fw" ng-show="compilingStatus['responsesReport_basic']" aria-hidden="true"></i>
+          <!--{{'BTN.EXPORT_ANSWERS' | translate}}-->
+        </a>
+      </pdf-generator>
+
+    </div>
+
+  </div>
+
+  <market-report infographic="infographicData" language="selectedLanguage"></market-report>
+
+</div>

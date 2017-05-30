@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  mongodb:
+    image: mongo:3.0.3
+    command: mongod --smallfiles
+    restart: always
+    volumes:
+      - ~/docker-data/cobelt-application/mongodb:/data/db
+    ports:
+      - "29017:29017"
+      - "30017:30017"

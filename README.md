@@ -1,4 +1,4 @@
-# umi-application
+# cobelt-application
 
 ## Prérequis
 
@@ -8,6 +8,6 @@
 
 ## Test Docker (local)
 
-`docker build -t umi-v3 .`
+`docker build -t cobelt-v1 .`
 
-`docker run -d -p 3000:3000 umi-v3`
+`docker run -d -p 3001:3001 cobelt-v1`

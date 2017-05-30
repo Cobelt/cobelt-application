@@ -1,0 +1,148 @@
+<div class="flex-container">
+  <div class="column content">
+
+    <!--
+    <ol class="breadcrumb">
+        <li><a href="" ui-sref="invention.list"><!--{{ 'INVENTION.LIST.TITLE' | translate }}</a></li>
+        <li class="active" ng-if="!invention.pitch.title"><!--{{ 'INVENTION.NEW.TITLE' | translate }}</li>
+        <li class="active" ng-if="invention.pitch.title"><!--{{inventionCard.pitch.title}}</li>
+    </ol>
+
+    <h1><!--{{ tabs[selectedTab].title | translate | textValue }}</h1>
+    -->
+
+
+    <ul class="steps-innovation">
+      <li class="active">
+        <strong>1</strong>
+        <a href="" ui-sref="invention.edit({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.EDIT' | translate }}--></a>
+      </li>
+
+      <li>
+        <strong>2</strong>
+        <a href="" ui-sref="invention.settings({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.SETTING' | translate }}--></a>
+      </li>
+
+      <li>
+        <strong>3</strong>
+        <a href="" ui-sref="invention.infographic({inventionId:invention.id})"><!--{{ 'INVENTION.STEPS.REPORT' | translate }}--></a>
+      </li>
+    </ul>
+
+    <div class="auto-save">
+      <span ng-show="!!isAutoSaving"><!--{{ 'INVENTION.AUTO_SAVE.IN_PROGRESS' | translate }}--></span>
+      <span ng-show="!isAutoSaving"><!--{{ 'INVENTION.AUTO_SAVE.SAVED' | translate }}-->&nbsp;<time am-time-ago="lastSaveDate"></time></span>
+    </div>
+
+    <!--
+    <div class="btn-group card-language">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <img class="flag" src="/images/common/US.png" alt="English" width="30" height="" ng-show="cardLanguage === 'en'">
+            <img class="flag" src="/images/common/FR.png" alt="Français" width="30" height="" ng-show="cardLanguage === 'fr'">
+            <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu">
+            <li ng-click="chooseInventionCardLanguage('fr')" ng-show="cardLanguage === 'en'">
+                <img class="flag" src="/images/common/FR.png" alt="Français" width="30" height="">
+            </li>
+            <li ng-click="chooseInventionCardLanguage('en')" ng-show="cardLanguage === 'fr'">
+                <img class="flag" src="/images/common/US.png" alt="English" width="30" height="">
+            </li>
+        </ul>
+    </div>
+    -->
+
+    <div ng-class="{disabled: editdone}" progress-form progress-percentage="progressValuePercentage" progress-on-add="handleProgressItem(item)">
+
+      <!-- Tabs bar -->
+      <ul class="nav nav-tabs nav-steps nav-justified">
+        <li ng-repeat="tab in tabs" ng-click="chooseTab($index)"
+            ng-class="{active: selectedTab == $index, error: isTabInError(tab.name)}">
+          <a href="">
+            <span class="fa fa-check"></span>
+            <span class="fa fa-times"></span>
+            <img src="/images/invention/flag-green.svg" alt="" width="" height="" ng-if="tab.name == 'validation' && selectedTab != $index">
+            <img src="/images/invention/flag.svg" alt="" width="" height="" ng-if="tab.name == 'validation' && selectedTab == $index">
+            <span><!--{{ tab.title | translate | textValue }}--></span>
+          </a>
+        </li>
+      </ul>
+
+
+      <div ng-include="'modules/invention/views/invention.edit.pitch.html'"
+           ng-show="tabs[selectedTab].name == 'pitch'" class="pitch">
+      </div>
+
+
+      <div ng-include="'modules/invention/views/invention.edit.patent.html'"
+           ng-controller="InventionEditPatentController"
+           ng-show="tabs[selectedTab].name == 'patents'" class="patents">
+      </div>
+
+
+      <div ng-include="'modules/invention/views/invention.edit.business.html'"
+           ng-controller="InventionEditBusinessController"
+           ng-show="tabs[selectedTab].name == 'business'" class="business">
+      </div>
+
+
+      <div progress-item="inventionCard.medias"
+           ng-include="'modules/invention/views/invention.edit.medias.html'"
+           ng-controller="InventionEditMediasController"
+           ng-show="tabs[selectedTab].name == 'medias'" class="medias">
+      </div>
+
+
+      <div ng-include="'modules/invention/views/invention.edit.validation.html'"
+           ng-controller="InventionEditValidationController"
+           ng-show="tabs[selectedTab].name == 'validation'" class="validation">
+      </div>
+
+
+      <div class="navigation-arrow text-center">
+        <a ng-click="prevTab()" href="" class="previous" ng-hide="tabs[selectedTab].name == 'pitch'">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a ng-click="nextTab()" href="" class="next" ng-hide="tabs[selectedTab].name == 'validation'">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="column sidebar">
+
+    <div ng-include="'modules/invention/views/invention.edit.preview.html'"
+         ng-controller="InventionEditPreviewController" class="preview">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--
+///////////////////////////////////////////////////
+***************************************************
+        Popup Paid Banner
+***************************************************
+///////////////////////////////////////////////////-->
+
+<script type="text/ng-template" id="paidExplanationDialog.html">
+  <div class="modal-body">
+    <div ng-include="'modules/invention/views/template.offers.html'"></div>
+  </div>
+
+  <div class="modal-footer phone-more-details">
+    <h2><!--{{ 'INVENTION.BE_CONTACTED.TITLE' | translate }}--></h2>
+
+    <input type="text"
+           class="form-control input-lg"
+           ng-model="phoneNumber"
+           placeholder="<!--{{ 'INVENTION.BE_CONTACTED.PLACEHOLDER' | translate }}-->">
+
+    <button type="submit" class="btn btn-primary btn-lg" translate="INVENTION.BE_CONTACTED.CALL_ME" ng-click="askPhoneCall()">&nbsp;</button>
+  </div>
+</script>

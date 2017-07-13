@@ -1,0 +1,46 @@
+header
+  position relative
+  width 100%
+
+  .navbar-fixed
+    z-index 1000
+
+  .brand-logo
+    height 64px
+    filter color-rendering
+
+    img
+      width 48px
+      padding-top 8px
+      transform scaleX(-1)
+
+  .brand-logo, nav-icons
+    transition 0.1s
+
+  nav
+    transition 0.3s
+    ul
+      text-align center
+
+      app-nav-icon, li a i
+        transition 0.3s
+
+      .lang-flag
+        width 24px
+        filter brightness(0.8)
+
+        &a
+          margin-right 0.3rem
+
+      a.dropdown-button
+        img.lang-flag
+          width 24px
+          margin-top 24px
+          margin-bottom -2px
+
+      .material-icons.reduced-margin
+        &.right
+          margin-left 5px
+        &.left
+          margin-right 5px
+

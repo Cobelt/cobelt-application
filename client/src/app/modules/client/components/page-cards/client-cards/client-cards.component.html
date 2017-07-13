@@ -1,0 +1,12 @@
+<app-shared-breadcrumb [routes]="[{routerLink:'/', name:'COMMON.HOME'},
+                                  {routerLink:'./', name:'COMMON.CARDS'}]"></app-shared-breadcrumb>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let card of cards; let i = index">
+      <div class="inline col s12 m6">
+        <app-client-card [card]="card"></app-client-card>
+      </div>
+    </div>
+  </div>
+</div>

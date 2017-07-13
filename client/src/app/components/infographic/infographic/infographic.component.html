@@ -1,8 +1,0 @@
-<infographic-nav class="col s4"></infographic-nav>
-<div class="inline col s8 offset-s4" *ngIf="infographic">
-  <div *ngFor="let id of infographic.orderedQuestions">
-    <section id="{{ getStatTitle(id) | slugify }}">
-      <infographic-container [thisQuestionId]=id></infographic-container>
-    </section>
-  </div>
-</div>

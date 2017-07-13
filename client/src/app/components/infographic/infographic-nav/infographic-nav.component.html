@@ -1,6 +1,0 @@
-<ul class="section table-of-contents"><li><a class="waves-effect waves-light" (click)="invertShow()"><i class="material-icons left">subject</i>Click for show list</a></li></ul>
-<ul class="section table-of-contents" *ngIf="show">
-  <div *ngFor="let id of infographic.orderedQuestions">
-    <li><a><!--href="#{{ question.statTitle | slugify }}"-->{{ getStatTitle (id) }}<i class="material-icons right">play_arrow</i></a></li>
-  </div>
-</ul>

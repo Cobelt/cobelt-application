@@ -1,29 +1,51 @@
-import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NotificationsService } from 'angular2-notifications';
+import { AuthService } from './services/auth/auth.service';
+import { TranslateService, initTranslation } from './i18n/i18n';
+import { LoadingService } from './services/loading/loading.service';
+
+import 'rxjs/add/operator/pairwise';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
-  styleUrls: ['./app.component.styl']
+  styleUrls: ['./app.component.styl'],
+  template: // '<simple-notifications [options]="notificationsOptions"></simple-notifications>' +
+  '<div class="progress"><div class="indeterminate" *ngIf="isLoading"></div></div>' +
+  '<router-outlet></router-outlet>'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private _authService: AuthService,
-              private _router: Router) {
+  public isLoading = false;
 
-    if (_authService.isAcceptingCookies()) {
-      _authService.initializeSession().subscribe(
-        res => console.log(res.message),
-        error => console.log("Can't reach server")
+  public notificationsOptions = {
+    position: ['top', 'right'],
+    timeOut: 5000,
+    lastOnBottom: false,
+    maxStack: 4,
+    theClass: 'notification'
+  };
+
+  constructor(private _translateService: TranslateService,
+              private _authService: AuthService,
+              private _loadingService: LoadingService,
+              private _notificationsService: NotificationsService) {}
+
+  ngOnInit(): void {
+    initTranslation(this._translateService);
+
+    if (this._authService.acceptCookies) { // CNIL
+      this._authService.initializeSession().subscribe(
+          res => null,
+          error => this._notificationsService.error('Erreur', 'Serveur inaccessible', { // TODO translate
+            clickToClose: false,
+            timeOut: 0
+          })
       );
     }
 
-
-    /*_router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        console.log("Page " + event.url); // TODO Envoyer les pages visités au serveur pour les stats (enregistrement dans la session...)
-      }
-    });*/
+    this._loadingService.isLoading$.subscribe(isLoading => {
+      this.isLoading = isLoading;
+    });
   }
+
 }

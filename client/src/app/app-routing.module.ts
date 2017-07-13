@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminModule } from './modules/admin/admin.module';
-import { ClientModule } from './modules/client/client.module';
-import { AuthService } from './services/auth.service';
-//import { AuthGuard } from './modules/admin/auth-guard.service';
+
+import { AuthService } from './services/auth/auth.service';
+
+import { NonAuthGuard } from './non-auth-guard.service';
+import { AuthGuard } from './auth-guard.service';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    component: ClientModule
+    path: 'edit',
+    loadChildren: './modules/editor/editor.module#EditorModule'
   },
   {
     path: 'admin',
-    component: AdminModule
+    loadChildren: './modules/admin/admin.module#AdminModule'
+  },
+  {
+    path: '',
+    loadChildren: './modules/client/client.module#ClientModule'
   }
 ];
 
@@ -26,7 +31,8 @@ const appRoutes: Routes = [
   declarations: [
   ],
   providers: [
-    //AuthGuard,
+    AuthGuard,
+    NonAuthGuard,
     AuthService
   ]
 })

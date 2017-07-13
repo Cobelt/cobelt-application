@@ -1,0 +1,65 @@
+<a (click)="restore()"><i class="material-icons small right restore-btn" materialize="tooltip" [materializeParams]="[{position: 'bellow', delay: 100, tooltip: 'Restaurer'}]"  [style.color]="_edService.visual.textColor">restore</i></a>
+<div class="container">
+  <h4>Paramétrage du thème</h4>
+
+  <div class="row">
+    <div class="col s12">
+      <h5><strong>Mes thèmes</strong></h5>
+      <div class="box" >
+        <ul>
+          <li *ngIf="!_edService.themes.length">Aucun thème ajouté</li>
+          <li *ngFor="let theme of _edService.themes; let i = index">
+            <div class="row">
+              <div class="col s4 offset-s1 inline">
+                <span>{{ theme.name }}</span>
+              </div>
+              <button class="btn small col s4 offset-s1" value="{{ theme.name }}" (mouseenter)="hoverTheme($event)" (mouseleave)="hoverTheme($event)" (click)="chooseTheme(theme.name)" [style.background-color]="_edService.visual.secondaryColor">
+                Utiliser ce thème<i class="material-icons right">done</i>
+              </button>
+              <a class="inline" (click)="removeTheme(theme.name)"><i class="material-icons right col s1" [style.color]="_edService.visual.primaryColor">delete</i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <br/>
+    </div>
+
+    <div class="row">
+      <div class="inline">
+        <input type="text" class="col s3 offset-s2 left-align" placeholder="Name it and modify after" [(ngModel)]="_themeNameInput">
+        <button class="col s4 offset-s1 btn waves-effect waves-light" (click)="addTheme()" [style.background-color]="_edService.visual.secondaryColor">Ajouter un nouveau thème<i class="material-icons right">add</i></button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h5><strong>Mes couleurs</strong></h5>
+      <div class="box" >
+        <ul>
+          <li *ngIf="!_edService.visual.length">Aucune couleur ajoutée</li>
+          <li *ngFor="let color of _edService.visual.colors; let i = index">
+            <div class="row">
+              <div class="col s2 inline">
+                <span class="emptySpace" [style.width]="'15px'" [style.background-color]="color">empty</span> <!-- rect with the color choosed TODO changer @nbsp car visible quand couleur n'existe pas-->
+                <span>{{ color }}</span>
+              </div>
+              <button class="btn small col s2 offset-s1" value="{{ color }}" (mouseenter)="hover('primary', $event)" (mouseleave)="hover('primary', $event)" (click)="choose('primary', color)" [style.background-color]="_edService.visual.secondaryColor">Principal</button>
+              <button class="btn small col s2" value="{{ color }}" (mouseenter)="hover('secondary', $event)" (mouseleave)="hover('secondary', $event)" (click)="choose('secondary', color)" [style.background-color]="_edService.visual.secondaryColor">Secondaire</button>
+              <button class="btn small col s2" value="{{ color }}" (mouseenter)="hover('text', $event)" (mouseleave)="hover('text', $event)" (click)="choose('text', color)" [style.background-color]="_edService.visual.secondaryColor">Texte</button>
+              <button class="btn small col s2" value="{{ color }}" (mouseenter)="hover('navText', $event)" (mouseleave)="hover('navText', $event)" (click)="choose('navText', color)" [style.background-color]="_edService.visual.secondaryColor">Header</button>
+              <a class="inline" (click)="removeColor(color)"><i class="material-icons right col s1" [style.color]="_edService.visual.primaryColor">delete</i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <br/>
+    </div>
+    <div class="row">
+      <div class="inline">
+        <input type="text" class="col s3 offset-s2 left-align" placeholder="#000000" [(ngModel)]="_colorInput">
+        <button class="col s4 offset-s1 btn waves-effect waves-light" (click)="addColor()" [style.background-color]="_edService.visual.secondaryColor">Ajouter une couleur <i class="material-icons right">add</i></button>
+      </div>
+    </div>
+
+  </div>
+</div>

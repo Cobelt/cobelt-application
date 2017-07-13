@@ -1,0 +1,41 @@
+<div id="accountSideNav" class="side-nav">
+
+  <div class="container connexion" *ngIf="!_authService.isAuthenticated">
+    <br/>
+
+    <!--<div class="input-field col s6 inline"><a routerLink="/login">{{ 'ACCOUNT.LOG_IN' | translate }}</a></div>
+    <div class="input-field col s6 inline">{{ 'ACCOUNT.ASK_HAVE_ACCOUNT' | translate }} <a routerLink="/signup">{{ 'ACCOUNT.SIGN_IN' | translate }}</a></div>
+
+    <h4>{{ 'ACCOUNT.WELCOME' | translate }}</h4>
+
+    <div class="row">
+        <div class="input-field col s6 inline">
+            <input type="text" id="firstname" class="validate" placeholder="{{ 'ACCOUNT.FIRSTNAME' | translate }}" [(ngModel)]="prenom">
+            &lt;!&ndash;<label for="firstname">Prénom</label>&ndash;&gt;
+        </div>
+        <div class="input-field col s6 inline">
+            <input type="text" id="lastname" class="validate" placeholder="{{ 'ACCOUNT.LASTNAME' | translate }}" [(ngModel)]="nom">
+            &lt;!&ndash;<label for="lastname">Nom</label>&ndash;&gt;
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6 inline">
+            <input type="email" id="email" placeholder="{{ 'ACCOUNT.EMAIL' | translate }}" [(ngModel)]="mail" class="validate">
+            &lt;!&ndash;<label for="email" data-error="wrong" data-success="right">Email</label>&ndash;&gt;
+        </div>
+
+        <div class="input-field col s6 inline">
+            <input type="tel" id="icon_telephone" placeholder="{{ 'ACCOUNT.PHONE' | translate }}" class="validate">
+            &lt;!&ndash;<label for="icon_telephone">Telephone</label>&ndash;&gt;
+        </div>
+    </div>
+
+    <a href="#name"><span class="name">{{ prenom | capitalize }} {{ nom | capitalize }}</span></a>
+    <a href="#email"><span class="email">{{ mail }}</span></a>-->
+  </div>
+
+  <!--<div class="userView" *ngIf="account">
+    <a (click)="logout()" *ngIf="account">{{ 'ACCOUNT.LOG_OUT' | translate }}</a>
+  </div>-->
+</div>

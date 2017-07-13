@@ -1,40 +1,43 @@
+  /*** Angular ***/
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+
+  /*** Dependencies imported ***/
+import { TranslateModule, TranslateLoader, TranslateService } from "@ngx-translate/core";
 import { MaterializeModule } from 'angular2-materialize/dist';
 import { Observable } from 'rxjs/Observable';
+import { NgPipesModule } from "ngx-pipes";
 
-import {InventionService} from "../../services/invention.service";
-import {UserService} from "../../services/user.service";
+  /*** Modules ***/
+import { SharedModule } from '../shared/shared.module';
 
+  /*** Router ***/
 import { ClientRoutingModule } from './client-routing.module';
-import { ClientHeaderComponent } from './client-header/client-header.component';
-import { ClientFooterComponent } from './client-footer/client-footer.component';
+
+  /*** Components ***/
+import { ClientHeaderComponent } from './components/client-header/client-header.component';
+import { ClientFooterComponent } from './components/client-footer/client-footer.component';
 import { ClientComponent } from './client.component';
 
-import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component';
-import { ClientInventionComponent } from "./client-invention/client-invention.component";
-import { ClientAccountComponent } from './client-account-sidenav/client-account.component';
-import { ClientDiscoverComponent } from './client-discover/client-discover.component';
-import { ClientLoginComponent } from './client-login/client-login.component';
-import { ClientSignupComponent } from './client-signup/client-signup.component';
+import { ClientAccountComponent } from './components/client-account/client-account.component';
+import { ClientArticleComponent } from './components/page-home/client-articles/client-article/client-article.component';
+import { ClientHomeComponent } from "./components/page-home/client-home/client-home.component";
+import { ClientLoginComponent } from './components/client-login/client-login.component';
+import { ClientSignupComponent } from './components/client-signup/client-signup.component';
+import { ClientSliderComponent } from "./components/page-home/client-slider/client-slider.component";
 
-import { CnilOverlayComponent } from './client-cnil-overlay/client-cnil-overlay.component';
-
-export function createTranslateLoader() {
-  return new TranslateUniversalLoader();
-}
-
-export class TranslateUniversalLoader implements TranslateLoader {
-  public getTranslation(lang: string): Observable<any> {
-    return Observable.create(observer => {
-      observer.next();
-      observer.complete();
-    });
-  }
-}
+import { ClientCnilOverlayComponent } from './components/client-cnil-overlay/client-cnil-overlay.component';
+import { ClientLogoutComponent } from './components/client-logout/client-logout.component';
+import { ClientCardsComponent } from './components/page-cards/client-cards/client-cards.component';
+import { ClientSliderSlidesComponent } from './components/page-home/client-slider/client-slider-slides/client-slider-slides.component';
+import { ClientCardComponent } from './components/page-cards/client-cards/client-card/client-card.component';
+import { ClientGenealogyComponent } from './components/page-genealogy/client-genealogy/client-genealogy.component';
+import { ClientGamesComponent } from './components/page-games/client-games/client-games.component';
+import { ClientStoriesComponent } from './components/page-stories/client-stories/client-stories.component';
+import { ClientArticlesComponent } from './components/page-home/client-articles/client-articles.component';
+import { ClientShopComponent } from './components/page-shop/client-shop/client-shop.component';
+import { ClientDrawingsComponent } from './components/page-drawings/client-drawings/client-drawings.component';
 
 @NgModule({
   imports: [
@@ -42,27 +45,47 @@ export class TranslateUniversalLoader implements TranslateLoader {
     MaterializeModule,
     ClientRoutingModule,
     FormsModule,
-    HttpModule,
     ReactiveFormsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader)
-      }
-    })
+    NgPipesModule,
+    TranslateModule.forChild(),
+
+    SharedModule,
   ],
   declarations: [
     ClientComponent,
     ClientHeaderComponent,
     ClientFooterComponent,
+    ClientCnilOverlayComponent,
+
     ClientAccountComponent,
-    ClientDashboardComponent,
-    ClientInventionComponent,
+    ClientArticleComponent,
+    ClientHomeComponent,
+
+    ClientSliderComponent,
+    ClientSliderSlidesComponent,
+
+    /* connection / inscription */
     ClientLoginComponent,
-    ClientDiscoverComponent,
-    CnilOverlayComponent,
-    ClientSignupComponent
+    ClientLogoutComponent,
+    ClientSignupComponent,
+
+    ClientCardsComponent,
+    ClientCardComponent,
+
+    ClientGenealogyComponent,
+    ClientGamesComponent,
+    ClientStoriesComponent,
+    ClientArticlesComponent,
+    ClientShopComponent,
+    ClientDrawingsComponent
   ],
-  providers: [UserService, InventionService]
+  exports: [
+    ClientHeaderComponent,
+    ClientFooterComponent
+  ]
 })
-export class ClientModule { }
+
+
+export class ClientModule {
+  constructor() {}
+}

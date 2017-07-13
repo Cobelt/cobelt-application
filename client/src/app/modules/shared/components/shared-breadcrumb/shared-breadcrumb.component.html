@@ -1,0 +1,7 @@
+<nav>
+  <div class="nav-wrapper container">
+    <div class="col s12">
+      <a *ngFor="let route of routes" [routerLink]="route.routerLink" class="breadcrumb">{{ route.name | translate }}</a>
+    </div>
+  </div>
+</nav>

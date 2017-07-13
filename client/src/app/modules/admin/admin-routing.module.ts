@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { AdminComponent } from './admin.component';
 import { AdminAuthGuard } from './admin-auth-guard.service';
 

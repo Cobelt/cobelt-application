@@ -16,13 +16,12 @@
 // 1. Colors
 // ==========================================================================
 
-$primary-color: #0B90C6;
-$secondary-color: #F79323;
+$primary-color: #34495e;
+$secondary-color: #afb4b4;
 
 // 16. Spinners | Loaders
 // ==========================================================================
 $spinner-default-color: $secondary-color !default;
-
 
 // 20. Typography
 // ==========================================================================
@@ -37,4 +36,12 @@ $h6-fontsize: 1rem !default;
 //======================================================================================================================
 // Loading of Materialize :
 $roboto-font-path: "~/materialize-css/fonts/roboto/"; // Eq. "../node_modules/materialize-css/fonts/roboto/"
+
+
+
+.indicators {
+  bottom: 60px ! important;
+  z-index: 25 !important;
+}
+
 @import "~materialize-css/sass/materialize";

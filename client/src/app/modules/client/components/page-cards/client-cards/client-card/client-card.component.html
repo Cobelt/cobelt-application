@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-image">
+    <img [src]="card.miniature">
+    <div class="card-header">
+      <span class="col l7 s8 push-l5 push-s4 card-title">{{ card.title }}</span>
+      <div class="col l5 s4 card-stats">{{ card.power }} / {{ card.toughness }}</div>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <p *ngIf="!editing">{{ card.content | shorten: 100: '...'}}</p>
+    <textarea *ngIf="editing" id="content" class="materialize-textarea" placeholder="{{ card.content | shorten: 100: '...'}}"></textarea>
+  </div>
+
+  <div class="card-action">
+    <a [routerLink]="'./' + card.id">Read more...</a>
+    <a routerLink="./">
+      <i class="material-icons right" *ngIf="account">delete</i>
+      <i class="material-icons right" *ngIf="!account">add_shopping_cart</i>
+    </a>
+    <a routerLink="./edit/{{ card.id }}" *ngIf="_edService.edMode"><i class="material-icons right" >create</i></a>
+  </div>
+</div>

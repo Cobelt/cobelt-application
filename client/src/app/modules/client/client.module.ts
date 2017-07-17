@@ -4,10 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
   /*** Dependencies imported ***/
-import { TranslateModule, TranslateLoader, TranslateService } from "@ngx-translate/core";
+import { TranslateModule } from '@ngx-translate/core';
 import { MaterializeModule } from 'angular2-materialize/dist';
-import { Observable } from 'rxjs/Observable';
-import { NgPipesModule } from "ngx-pipes";
+import { NgPipesModule } from 'ngx-pipes';
 
   /*** Modules ***/
 import { SharedModule } from '../shared/shared.module';
@@ -22,10 +21,10 @@ import { ClientComponent } from './client.component';
 
 import { ClientAccountComponent } from './components/client-account/client-account.component';
 import { ClientArticleComponent } from './components/page-home/client-articles/client-article/client-article.component';
-import { ClientHomeComponent } from "./components/page-home/client-home/client-home.component";
+import { ClientHomeComponent } from './components/page-home/client-home/client-home.component';
 import { ClientLoginComponent } from './components/client-login/client-login.component';
 import { ClientSignupComponent } from './components/client-signup/client-signup.component';
-import { ClientSliderComponent } from "./components/page-home/client-slider/client-slider.component";
+import { ClientSliderComponent } from './components/page-home/client-slider/client-slider.component';
 
 import { ClientCnilOverlayComponent } from './components/client-cnil-overlay/client-cnil-overlay.component';
 import { ClientLogoutComponent } from './components/client-logout/client-logout.component';
@@ -44,14 +43,15 @@ import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-hea
 @NgModule({
   imports: [
     CommonModule,
-    MaterializeModule,
-    ClientRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgPipesModule,
     TranslateModule.forChild(),
+    MaterializeModule,
+    NgPipesModule,
 
     SharedModule,
+
+    ClientRoutingModule
   ],
   declarations: [
     ClientComponent,
@@ -65,26 +65,32 @@ import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-hea
     ClientCnilOverlayComponent,
 
     ClientAccountComponent,
+
     ClientArticleComponent,
-    ClientHomeComponent,
+    ClientArticlesComponent,
+
+    ClientCardComponent,
+    ClientCardsComponent,
 
     ClientSliderComponent,
     ClientSliderSlidesComponent,
+
+    ClientHomeComponent,
+    ClientGamesComponent,
+    ClientGenealogyComponent,
+    ClientShopComponent,
+    ClientStoriesComponent,
+    ClientDrawingsComponent,
 
     /* connection / inscription */
     ClientLoginComponent,
     ClientLogoutComponent,
     ClientSignupComponent,
 
-    ClientCardsComponent,
-    ClientCardComponent,
-
-    ClientGenealogyComponent,
-    ClientGamesComponent,
-    ClientStoriesComponent,
-    ClientArticlesComponent,
-    ClientShopComponent,
-    ClientDrawingsComponent,
+  ],
+  exports: [
+    ClientHeaderComponent,
+    ClientFooterComponent
   ]
 })
 

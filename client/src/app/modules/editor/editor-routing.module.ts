@@ -14,13 +14,13 @@ import { AuthGuard } from '../../auth-guard.service';
 
 const editorRoutes: Routes = [
   {
-    path: 'edit',
+    path: '',
     component: EditorComponent,
     children: [
-      {
+      /*{
         path: 'theme',
         component: EditorThemeComponent
-      },
+      },*/
       {
         path: '**',
         component: SharedNotFoundComponent

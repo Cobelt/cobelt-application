@@ -18,7 +18,7 @@
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'right' ? 'left' : 'right'">
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/drawings'" [icon]="'brush'"></app-nav-icon>
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/shop'" [icon]="'shopping_cart'"></app-nav-icon>
-          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
+          <app-nav-icon [route]="'/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
           <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
         </ul>
 

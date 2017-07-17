@@ -19,14 +19,14 @@
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/drawings'" [icon]="'brush'"></app-nav-icon>
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/shop'" [icon]="'shopping_cart'"></app-nav-icon>
           <app-nav-icon [route]="'/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
-          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:false, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
       </div>
 
       <div class="nav-wrapper hide-on-med-and-up">
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'">
-          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{edge:'left', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{edge:'left', menuWidth: 500, draggable:famlse, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
         <a class="brand-logo" [ngClass]="edService.visual.logoAlignment" routerLink="/">

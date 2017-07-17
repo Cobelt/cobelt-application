@@ -1,6 +1,6 @@
 /**
- * UMI v3 - API
- * Created on 25/04/2017.
+ * Cobelt API v1
+ * Created on June 2017
  */
 
 'use strict';
@@ -42,7 +42,7 @@ const port = process.env.PORT || 3001;
 const sessionMaxAge = parseInt(process.env.SESSION_MAX_AGE) || 172800000; // 60000 = 1 minute
 process.env.SESSION_MAX_AGE = sessionMaxAge; // Pour être sûr qu'il y ait une valeur
 const mongoDBAddress = process.env.MONGODB_URL || 'mongodb:27017';
-const mongoDBName = process.env.MONGODB_NAME || 'umi';
+const mongoDBName = process.env.MONGODB_NAME || 'cobelt_db';
 const mongoDBCachingMaxAgeInMinutes = parseInt(process.env.MONGODB_MAX_CACHING_TIME_IN_MINUTES) || 0;
 const sessionSecretKey = process.env.SESSION_SECRET_KEY;
 if (!sessionSecretKey) {

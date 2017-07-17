@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.umi.us'
+  apiUrl: 'https:/cobelt.fr'
 };

@@ -1,5 +1,5 @@
 {
-  "name": "umi-application-server",
+  "name": "cobelt-application-server",
   "version": "3.0.0",
   "description": "",
   "main": "server.js",

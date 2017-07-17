@@ -1,4 +1,4 @@
-# umi-application server
+# cobelt-application server
 
 ## Performances
 

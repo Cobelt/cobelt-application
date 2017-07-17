@@ -42,7 +42,7 @@ module.exports = {
                 body: body,
                 template: "personal", // 'plain'...
                 from: {
-                    type: "ahintzy@umi.us",
+                    type: "anEmailRandom@domain.ex",
                     id: "862813"
                 },
                 to: {

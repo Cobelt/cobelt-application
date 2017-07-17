@@ -52,7 +52,7 @@ if (!sessionSecretKey) {
 const supportedLanguages = new locale.Locales(["en_US", "fr_FR"]);
 
 const originsWhitelist = [
-    'http://localhost:4200'
+    'https://localhosthost:4200'
 ];
 
 const accessLogStream = rfs('access.log.txt', {

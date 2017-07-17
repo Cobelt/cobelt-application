@@ -85,10 +85,6 @@ import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-hea
     ClientArticlesComponent,
     ClientShopComponent,
     ClientDrawingsComponent,
-  ],
-  exports: [
-    ClientHeaderComponent,
-    ClientFooterComponent
   ]
 })
 

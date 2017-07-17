@@ -1,27 +1,29 @@
-<div id="header-sidenav-smalldevice" class="side-nav row">
-  <a class="s12">
-    <app-nav-icon [route]="'/stories' + (edService.edMode ? '/edit' : '')" [icon]="'line_weight'"></app-nav-icon>
-    <span>Stories</span>
-  </a>
-  <a class="s12">
-    <app-nav-icon [route]="'/genealogy' + (edService.edMode ? '/edit' : '')" [icon]="'supervisor_account'"></app-nav-icon>
-    <span>Genealogy</span>
-  </a>
-  <a class="s12">
-    <app-nav-icon [route]="'/games' + (edService.edMode ? '/edit' : '')" [icon]="'games'"></app-nav-icon>
-    <span>Games</span>
-  </a>
-  <a class="s12">
-    <app-nav-icon [route]="'/cards' + (edService.edMode ? '/edit' : '')" [icon]="'dashboard'"></app-nav-icon>
-    <span>Cards</span>
-  </a>
-  <a class="s12">
-    <app-nav-icon [route]="'/drawings' + (edService.edMode ? '/edit' : '')" [icon]="'brush'"></app-nav-icon>
-    <span>Drawings</span>
-  </a>
-  <a class="s12">
-    <app-nav-icon [route]="'/shop' + (edService.edMode ? '/edit' : '')" [icon]="'shopping_cart'"></app-nav-icon>
-    <span>Shop</span>
-  </a>
+<div id="header-sidenav-smalldevice" class="side-nav">
+  <div class="row">
+    <a class="s12">
+      <app-nav-icon [route]="'/stories' + (edService.edMode ? '/edit' : '')" [icon]="'line_weight'"></app-nav-icon>
+      <span>Stories</span>
+    </a>
+    <a class="s12">
+      <app-nav-icon [route]="'/genealogy' + (edService.edMode ? '/edit' : '')" [icon]="'supervisor_account'"></app-nav-icon>
+      <span>Genealogy</span>
+    </a>
+    <a class="s12">
+      <app-nav-icon [route]="'/games' + (edService.edMode ? '/edit' : '')" [icon]="'games'"></app-nav-icon>
+      <span>Games</span>
+    </a>
+    <a class="s12">
+      <app-nav-icon [route]="'/cards' + (edService.edMode ? '/edit' : '')" [icon]="'dashboard'"></app-nav-icon>
+      <span>Cards</span>
+    </a>
+    <a class="s12">
+      <app-nav-icon [route]="'/drawings' + (edService.edMode ? '/edit' : '')" [icon]="'brush'"></app-nav-icon>
+      <span>Drawings</span>
+    </a>
+    <a class="s12">
+      <app-nav-icon [route]="'/shop' + (edService.edMode ? '/edit' : '')" [icon]="'shopping_cart'"></app-nav-icon>
+      <span>Shop</span>
+    </a>
+  </div>
 
 </div>

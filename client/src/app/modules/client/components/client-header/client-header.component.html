@@ -1,6 +1,7 @@
 <header>
   <div class="navbar-fixed">
     <nav [style.background-color]="edService.visual.primaryColor">
+
       <div class="nav-wrapper hide-on-small-and-down">
 
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'">
@@ -18,14 +19,14 @@
           <app-nav-icon [route]="'/drawings' + (edService.edMode ? '/edit' : '')" [icon]="'brush'"></app-nav-icon>
           <app-nav-icon [route]="'/shop' + (edService.edMode ? '/edit' : '')" [icon]="'shopping_cart'"></app-nav-icon>
           <app-nav-icon [route]="'/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
-          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="accountSideNav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" [materializeParams]="[{activates: 'account-sidenav', edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
       </div>
 
       <div class="nav-wrapper hide-on-med-and-up">
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'" >
-          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{edge:'left', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
         <a class="brand-logo" [ngClass]="edService.visual.logoAlignment" routerLink="/">
@@ -37,16 +38,6 @@
         </ul>
       </div>
 
-      <!--
-        <!-- Not Authenticated
-        <li *ngIf="!authService.isAuthenticated"><a routerLink="/signup">{{ 'HEADER.SIGN_IN' | translate }}</a></li>
-        <li *ngIf="!authService.isAuthenticated"><a routerLink="/login">{{ 'HEADER.LOG_IN' | translate }}</a></li>
-
-        <!-- Authenticated
-        <li *ngIf="authService.isAuthenticated"><a (click)="logout()">{{ 'HEADER.LOG_OUT' | translate }}</a></li>
-        <li *ngIf="authService.isAuthenticated && authService.isAdmin"><a routerLink="/admin">Admin</a></li>
-        <li *ngIf="authService.isAuthenticated"><a materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"><i class="material-icons">account_circle</i></a></li>
-      -->
     </nav>
   </div>
 </header>

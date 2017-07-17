@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
 import { AuthService } from '../../../../services/auth/auth.service';
 import { TranslateService, initTranslation } from './i18n/i18n';
 import { EditionService } from '../../../../services/edition/edition.service';
+import {MaterializeAction} from "angular2-materialize";
 
 @Component({
   selector: 'app-client-header',
@@ -10,16 +11,16 @@ import { EditionService } from '../../../../services/edition/edition.service';
 })
 export class ClientHeaderComponent {
 
+  private _smallDeviceNavActions = new EventEmitter<any|MaterializeAction>();
+  private _accountNavActions = new EventEmitter<any|MaterializeAction>();
   private _actualRoute: string;
-  private _translate: any;
 
   constructor(private _translateService: TranslateService,
               private _authService: AuthService,
               private _edService: EditionService) {
-    this._translate = initTranslation(_translateService);
+    initTranslation(_translateService);
   }
 
-  // GET ACTUAL ROUTE
 
   logout() {
     this._authService.logout()
@@ -32,14 +33,19 @@ export class ClientHeaderComponent {
         });
   }
 
+  get actualRoute(): string {
+    return this._actualRoute;
+  }
 
   get edService(): EditionService {
     return this._edService;
   }
-  get actualRoute(): string {
-    return this._actualRoute;
+
+  get smallDeviceNavActions(): EventEmitter<any | MaterializeAction> {
+    return this._smallDeviceNavActions;
   }
-  get translate(): any {
-    return this._translate;
+
+  get accountNavActions(): EventEmitter<any | MaterializeAction> {
+    return this._accountNavActions;
   }
 }

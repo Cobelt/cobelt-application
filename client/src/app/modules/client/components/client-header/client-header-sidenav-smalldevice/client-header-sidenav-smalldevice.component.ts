@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EditionService} from "../../../../../services/edition/edition.service";
 
 @Component({
   selector: 'app-client-header-sidenav-smalldevice',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientHeaderSidenavSmalldeviceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _edService: EditionService) { }
 
   ngOnInit() {
   }
 
+  get edService(): EditionService {
+    return this._edService;
+  }
 }

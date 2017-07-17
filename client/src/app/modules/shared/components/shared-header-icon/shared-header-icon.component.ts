@@ -11,7 +11,11 @@ export class SharedHeaderIconComponent {
   @Input() public icon: string = '';
   @Input() public route: string = '';
   @Input() public side: string = '';
+  @Input() public span: string = '';
 
   constructor(private _edService: EditionService) {}
 
+  get edService(): EditionService {
+    return this._edService;
+  }
 }

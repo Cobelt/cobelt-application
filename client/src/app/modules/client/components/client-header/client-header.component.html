@@ -5,10 +5,10 @@
       <div class="nav-wrapper hide-on-small-and-down">
 
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'">
-          <app-nav-icon [route]="'/stories' + (edService.edMode ? '/edit' : '')" [icon]="'line_weight'"></app-nav-icon>
-          <app-nav-icon [route]="'/genealogy' + (edService.edMode ? '/edit' : '')" [icon]="'supervisor_account'"></app-nav-icon>
-          <app-nav-icon [route]="'/games' + (edService.edMode ? '/edit' : '')" [icon]="'games'"></app-nav-icon>
-          <app-nav-icon [route]="'/cards' + (edService.edMode ? '/edit' : '')" [icon]="'dashboard'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/stories'" [icon]="'line_weight'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/genealogy'" [icon]="'supervisor_account'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/games'" [icon]="'games'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/cards'" [icon]="'dashboard'"></app-nav-icon>
         </ul>
 
         <a class="brand-logo" [ngClass]="edService.visual.logoAlignment" routerLink="/">
@@ -16,17 +16,17 @@
         </a>
 
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'right' ? 'left' : 'right'">
-          <app-nav-icon [route]="'/drawings' + (edService.edMode ? '/edit' : '')" [icon]="'brush'"></app-nav-icon>
-          <app-nav-icon [route]="'/shop' + (edService.edMode ? '/edit' : '')" [icon]="'shopping_cart'"></app-nav-icon>
-          <app-nav-icon [route]="'/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
-          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" [materializeParams]="[{activates: 'account-sidenav', edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/drawings'" [icon]="'brush'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/shop'" [icon]="'shopping_cart'"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
+          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
       </div>
 
       <div class="nav-wrapper hide-on-med-and-up">
-        <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'" >
-          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+        <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'">
+          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{edge:'left', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
         <a class="brand-logo" [ngClass]="edService.visual.logoAlignment" routerLink="/">
@@ -34,7 +34,7 @@
         </a>
 
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'right' ? 'left' : 'right'" >
-          <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:true, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/myAccount'" [icon]="'account_circle'"></app-nav-icon>
         </ul>
       </div>
 
@@ -42,4 +42,5 @@
   </div>
 </header>
 
+<app-client-header-sidenav-smalldevice></app-client-header-sidenav-smalldevice>
 <app-client-account-nav></app-client-account-nav>

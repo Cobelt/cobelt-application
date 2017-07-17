@@ -99,7 +99,7 @@ mongoose.connection.once('open', function () {
         stream: accessLogStream
     }));
     app.use(locale(supportedLanguages));
-    //app.use(favicon('./public/image/favicon.ico'));
+    app.use(favicon('./public/icon.ico'));
     app.use(session(sessionConfig));
 
     app.options('*', function(req, res, next) { // FIXME Supprime les sessions créées par les requêtes OPTIONS des clients pour le CORS (évite les sessions inutiles). Trouver une autre méthode ?

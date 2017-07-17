@@ -56,8 +56,8 @@ import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-hea
   declarations: [
     ClientComponent,
 
-    ClientHeaderSidenavSmalldeviceComponent,
     ClientHeaderComponent,
+    ClientHeaderSidenavSmalldeviceComponent,
 
     ClientFooterComponent,
     ClientFooterTextblocComponent,

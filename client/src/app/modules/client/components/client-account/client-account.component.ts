@@ -25,8 +25,6 @@ export class ClientAccountComponent implements OnInit {
 
   ngOnInit(): void {
     initTranslation(this._translateService);
-    this._titleService.setTitle('Sign up'); // TODO translate
-
   }
 
   public onSubmit(form) {

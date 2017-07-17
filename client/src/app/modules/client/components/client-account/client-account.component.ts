@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
 import { TranslateService, initTranslation } from './i18n/i18n';
-import {Validators} from '@angular/forms';
+
 import {UserService} from '../../../../services/user/user.service';
 import {AuthService} from '../../../../services/auth/auth.service';
 import {Title} from '@angular/platform-browser';

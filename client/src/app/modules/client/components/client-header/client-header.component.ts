@@ -11,8 +11,6 @@ import { EditionService } from '../../../../services/edition/edition.service';
 export class ClientHeaderComponent {
 
   private _actualRoute: string;
-  private _open: boolean = false;
-  private _edMode: boolean = false;
   private _translate: any;
 
   constructor(private _translateService: TranslateService,

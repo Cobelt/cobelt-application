@@ -3,7 +3,7 @@ import {EditionService} from "../../services/edition/edition.service";
 
 @Component({
   selector: 'app-editor',
-  template:  `<app-editor-header></app-editor-header>
+  template:  `<app-client-header></app-client-header>
               <div [style.color]="_edService.visual.textColor"><router-outlet></router-outlet></div>
               <app-client-footer></app-client-footer>
               <app-client-cnil-overlay></app-client-cnil-overlay>`

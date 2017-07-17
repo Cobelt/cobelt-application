@@ -38,6 +38,8 @@ import { ClientStoriesComponent } from './components/page-stories/client-stories
 import { ClientArticlesComponent } from './components/page-home/client-articles/client-articles.component';
 import { ClientShopComponent } from './components/page-shop/client-shop/client-shop.component';
 import { ClientDrawingsComponent } from './components/page-drawings/client-drawings/client-drawings.component';
+import { ClientFooterTextblocComponent } from './components/client-footer/client-footer-textbloc/client-footer-textbloc.component';
+import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-header/client-header-sidenav-smalldevice/client-header-sidenav-smalldevice.component';
 
 @NgModule({
   imports: [
@@ -53,8 +55,13 @@ import { ClientDrawingsComponent } from './components/page-drawings/client-drawi
   ],
   declarations: [
     ClientComponent,
+
+    ClientHeaderSidenavSmalldeviceComponent,
     ClientHeaderComponent,
+
     ClientFooterComponent,
+    ClientFooterTextblocComponent,
+
     ClientCnilOverlayComponent,
 
     ClientAccountComponent,
@@ -77,7 +84,7 @@ import { ClientDrawingsComponent } from './components/page-drawings/client-drawi
     ClientStoriesComponent,
     ClientArticlesComponent,
     ClientShopComponent,
-    ClientDrawingsComponent
+    ClientDrawingsComponent,
   ],
   exports: [
     ClientHeaderComponent,

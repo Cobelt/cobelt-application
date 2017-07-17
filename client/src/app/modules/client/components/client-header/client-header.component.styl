@@ -5,42 +5,28 @@ header
   .navbar-fixed
     z-index 1000
 
-  .brand-logo
-    height 64px
-    filter color-rendering
+    nav
+      transition 0.3s
 
-    img
-      width 48px
-      padding-top 8px
-      transform scaleX(-1)
+      .nav-wrapper
 
-  .brand-logo, nav-icons
-    transition 0.1s
+        ul
+          text-align center
 
-  nav
-    transition 0.3s
-    ul
-      text-align center
+          app-nav-icon
+            transition 0.3s
 
-      app-nav-icon, li a i
-        transition 0.3s
+        .brand-logo
+          transform scaleX(-1) translateX(50%)
 
-      .lang-flag
-        width 24px
-        filter brightness(0.8)
+        .brand-logo, nav-icons
+          transition 0.15s
 
-        &a
-          margin-right 0.3rem
+        &.hide-on-small-and-down .brand-logo img
+          height 4rem
+          width auto
 
-      a.dropdown-button
-        img.lang-flag
-          width 24px
-          margin-top 24px
-          margin-bottom -2px
-
-      .material-icons.reduced-margin
-        &.right
-          margin-left 5px
-        &.left
-          margin-right 5px
-
+        &.hide-on-med-and-up .brand-logo img
+          margin-top 0.4rem
+          height 3rem
+          width auto

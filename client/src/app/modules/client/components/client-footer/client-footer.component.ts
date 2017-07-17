@@ -12,4 +12,8 @@ export class ClientFooterComponent {
                private _edService: EditionService) {
     initTranslation(_translate);
   }
+
+  get edService(): EditionService {
+    return this._edService;
+  }
 }

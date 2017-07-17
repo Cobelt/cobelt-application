@@ -1,7 +1,7 @@
 <div *ngIf="!_edService.edMode" class="slider" materialize="slider" height='500'
-     [materializeParams]="[{full_width: true, transition:'400', interval:'5', indicators:true, height:'400px'}]" [materializeActions]="sliderActions">
+     [materializeParams]="[{full_width: true, transition:'400', interval:'5', indicators:true, height:'400px'}]">
 
-  <ul class="slides inline" (click)="playOrPause()">
+  <ul class="slides inline">
     <li *ngFor="let slide of slides">
       <app-client-slider-slides [image]="slide.imageUrl" [title]="slide.title" [content]="slide.content" [textSide]="'left'"></app-client-slider-slides> <!-- TODO take data from server -->
     </li>
@@ -9,18 +9,11 @@
 </div>
 
 <div *ngIf="_edService.edMode" class="slider" materialize="slider" height='500'
-     [materializeParams]="[{full_width: true, transition:'400', interval:'5', indicators:false, height:'400px'}]" [materializeActions]="sliderActions">
+     [materializeParams]="[{full_width: true, transition:'400', interval:'5', indicators:false, height:'400px'}]">
   <ul class="slides inline">
     <li>
       <app-client-slider-slides [image]="'../../../../assets/images/settings_img.svg'"></app-client-slider-slides>
     </li>
   </ul>
 
-</div>
-
-<div class="inline left arrow" (click)="prevSlide()">
-  <img src="../../../../assets/images/arrow-left.svg">
-</div>
-<div class="inline right arrow" (click)="nextSlide()">
-  <img src="../../../../assets/images/arrow-right.svg">
 </div>

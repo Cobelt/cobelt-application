@@ -6,7 +6,8 @@ export const fr = {
     },
     'TEXT': {
       'LEFT': `Vous devriez retourner sur la page d'accueil`,
-      'RIGHT': `N'attendez pas que vienne l'hiver pour vous abriter`
+      'RIGHT': `N'attendez pas que vienne l'hiver pour vous abriter`,
+      'ERROR': 'Erreur'
     }
   }
 };

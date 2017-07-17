@@ -1,19 +1,14 @@
 .caption
-  opacity 1
   color #fff
   position absolute
   width 70%
-  top 15%
-  margin-top -3rem
+  top 10%
 
   &.marged-top
     margin-top 14rem
 
   h3
     font-size 2rem
-
-  h5
-    font 1.5rem
 
   h3, h5
     text-shadow 2px 2px 2px black
@@ -24,3 +19,24 @@
   &.right-align
     right 10%
 
+  &.center-align
+    left 50%
+    transform translateX(-50%)
+    text-align left
+
+
+  &.big
+    top inherit
+    bottom 2%
+
+    h3, h5
+      margin 0
+
+    h3
+      font-size 10rem
+
+    h5
+      color #C0392B
+      font 10rem
+      margin-left 1.5rem
+      margin-bottom -1rem

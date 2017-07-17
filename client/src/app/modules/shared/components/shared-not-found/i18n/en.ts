@@ -6,7 +6,8 @@ export const en = {
     },
     'TEXT': {
       'LEFT': 'Maybe you should return on homepage',
-      'RIGHT': `Don't wait the winter before finding your way`
+      'RIGHT': `Don't wait the winter before finding your way`,
+      'ERROR': 'Error'
     }
 
   }

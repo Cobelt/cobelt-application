@@ -38,7 +38,6 @@ import { ClientArticlesComponent } from './components/page-home/client-articles/
 import { ClientShopComponent } from './components/page-shop/client-shop/client-shop.component';
 import { ClientDrawingsComponent } from './components/page-drawings/client-drawings/client-drawings.component';
 import { ClientFooterTextblocComponent } from './components/client-footer/client-footer-textbloc/client-footer-textbloc.component';
-import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-header/client-header-sidenav-smalldevice/client-header-sidenav-smalldevice.component';
 
 @NgModule({
   imports: [
@@ -57,7 +56,6 @@ import { ClientHeaderSidenavSmalldeviceComponent } from './components/client-hea
     ClientComponent,
 
     ClientHeaderComponent,
-    ClientHeaderSidenavSmalldeviceComponent,
 
     ClientFooterComponent,
     ClientFooterTextblocComponent,

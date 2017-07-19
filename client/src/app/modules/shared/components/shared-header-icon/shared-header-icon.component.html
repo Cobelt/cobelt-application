@@ -1,6 +1,6 @@
-<li>
+<li [ngClass]="(router.url.indexOf(route) !== -1 && route)? 'actualRoute' : ''">
   <a [routerLink]="route === '' ? './' : route">
-    <i class="material-icons" [ngClass]="{ side: side, span: 'col s2' }" [style.color]="edService.visual.navTextColor">{{ icon }}</i>
-    <span class="col s6" *ngIf="span" [style.color]="edService.visual.navTextColor">{{ span }}</span>
+    <i class="material-icons" [ngClass]="{ side: side, 'col s2': inline }" [style.color]="edService.visual.navTextColor">{{ icon }}</i>
+    <span [ngClass]="{ 'col s6': inline }" *ngIf="span" [style.color]="edService.visual.navTextColor">{{ span }}</span>
   </a>
 </li>

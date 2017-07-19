@@ -8,7 +8,7 @@ export const en = {
       'TEXT': `You like my drawings, my websites or my video games ? You can contribute to the evolution of my projects thanks to a little donation !`
     },
     'JOIN_US': {
-      'BUTTON': 'Join us',
+      'BUTTON': 'Join',
       'TITLE': `Join the Dark Side`,
       'TEXT': `We don't have cookies but some atoms. You always wanted to be an isotope atom ? Perfect ! Here you can become a CobaltGuy or a CobaltLady !`
     },

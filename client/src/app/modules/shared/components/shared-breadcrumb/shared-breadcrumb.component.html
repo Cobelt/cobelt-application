@@ -1,4 +1,4 @@
-<nav>
+<nav class="hide-on-small-and-down">
   <div class="nav-wrapper container">
     <div class="col s12">
       <a *ngFor="let route of routes" [routerLink]="route.routerLink" class="breadcrumb">{{ route.name | translate }}</a>

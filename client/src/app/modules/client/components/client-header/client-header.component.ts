@@ -3,6 +3,7 @@ import { AuthService } from '../../../../services/auth/auth.service';
 import { TranslateService, initTranslation } from './i18n/i18n';
 import { EditionService } from '../../../../services/edition/edition.service';
 import {MaterializeAction} from "angular2-materialize";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-client-header',
@@ -13,11 +14,11 @@ export class ClientHeaderComponent {
 
   private _smallDeviceNavActions = new EventEmitter<any|MaterializeAction>();
   private _accountNavActions = new EventEmitter<any|MaterializeAction>();
-  private _actualRoute: string;
 
   constructor(private _translateService: TranslateService,
               private _authService: AuthService,
-              private _edService: EditionService) {
+              private _edService: EditionService,
+              private _router: Router) {
     initTranslation(_translateService);
   }
 
@@ -33,8 +34,8 @@ export class ClientHeaderComponent {
         });
   }
 
-  get actualRoute(): string {
-    return this._actualRoute;
+  get router(): Router {
+    return this._router;
   }
 
   get edService(): EditionService {

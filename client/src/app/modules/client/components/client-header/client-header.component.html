@@ -18,7 +18,7 @@
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'right' ? 'left' : 'right'">
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/drawings'" [icon]="'brush'"></app-nav-icon>
           <app-nav-icon [route]="(edService.edMode ? '/edit' : '') + '/shop'" [icon]="'shopping_cart'"></app-nav-icon>
-          <app-nav-icon [route]="'/edit/' + actualRoute" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
+          <app-nav-icon [route]="'/edit' + router.url" [icon]="edService.edMode ? 'done' : 'colorize'"></app-nav-icon>
           <app-nav-icon [icon]="'account_circle'" materialize="sideNav" data-activates="account-sidenav" [materializeParams]="[{edge:'right', menuWidth: 500, draggable:false, closeOnClick:true}]"></app-nav-icon>
         </ul>
 
@@ -26,7 +26,7 @@
 
       <div class="nav-wrapper hide-on-med-and-up">
         <ul class="nav-icons" [ngClass]="edService.visual.logoAlignment === 'left' ? 'right' : 'left'">
-          <app-nav-icon [icon]="'menu'" materialize="sideNav" data-activates="header-sidenav-smalldevice" [materializeParams]="[{edge:'left', menuWidth: 500, draggable:famlse, closeOnClick:true}]"></app-nav-icon>
+          <app-nav-icon [icon]="'menu'" class="dropdown-button" materialize="dropdown" data-activates='header-small-device-dropdown' [materializeParams]="[{belowOrigin:true, constrainWidth:false}]"></app-nav-icon>
         </ul>
 
         <a class="brand-logo" [ngClass]="edService.visual.logoAlignment" routerLink="/">
@@ -42,5 +42,22 @@
   </div>
 </header>
 
-<app-client-header-sidenav-smalldevice></app-client-header-sidenav-smalldevice>
 <app-client-account-nav></app-client-account-nav>
+
+<ul id="header-small-device-dropdown" class="dropdown-content" [style.background]="edService.visual.primaryColor">
+    <div class="row">
+
+        <app-nav-icon [route]="'/stories' + (edService.edMode ? '/edit' : '')" [icon]="'line_weight'" [span]="'Stories'"></app-nav-icon>
+
+        <app-nav-icon [route]="'/genealogy' + (edService.edMode ? '/edit' : '')" [icon]="'supervisor_account'" [span]="'Genealogy'"></app-nav-icon>
+
+        <app-nav-icon [route]="'/games' + (edService.edMode ? '/edit' : '')" [icon]="'games'" [span]="'Games'"></app-nav-icon>
+
+        <app-nav-icon [route]="'/cards' + (edService.edMode ? '/edit' : '')" [icon]="'dashboard'" [span]="'Cards'"></app-nav-icon>
+
+        <app-nav-icon [route]="'/drawings' + (edService.edMode ? '/edit' : '')" [icon]="'brush'" [span]="'Drawings'"></app-nav-icon>
+
+        <app-nav-icon [route]="'/shop' + (edService.edMode ? '/edit' : '')" [icon]="'shopping_cart'" [span]="'Shop'"></app-nav-icon>
+
+    </div>
+</ul>

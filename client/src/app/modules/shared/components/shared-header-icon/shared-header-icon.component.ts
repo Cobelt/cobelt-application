@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {EditionService} from "../../../../services/edition/edition.service";
+import {EditionService} from '../../../../services/edition/edition.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav-icon',
@@ -8,14 +9,20 @@ import {EditionService} from "../../../../services/edition/edition.service";
 })
 export class SharedHeaderIconComponent {
 
-  @Input() public icon: string = '';
-  @Input() public route: string = '';
-  @Input() public side: string = '';
-  @Input() public span: string = '';
+  @Input() public icon = '';
+  @Input() public route = '';
+  @Input() public side = '';
+  @Input() public span = '';
+  @Input() public inline = true;
 
-  constructor(private _edService: EditionService) {}
+  constructor(private _edService: EditionService,
+              private _router: Router) {}
 
   get edService(): EditionService {
     return this._edService;
+  }
+
+  get router(): Router {
+    return this._router;
   }
 }

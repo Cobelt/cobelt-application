@@ -8,7 +8,7 @@ export const fr = {
         'TEXT': `Vous apprécier mes dessins, mes sites ou même mes (futurs) jeux ? Vous pouvez contribuer à l'évolution de mes projets grâce à un petit don !`
     },
     'JOIN_US': {
-        'BUTTON': `La communauté t'attend`,
+        'BUTTON': `Rejoindre`,
         'TITLE': `Rejoins-nous`,
         'TEXT': `Si vous cherchez à rejoindre la communauté de l'ann.. euh.. des atômes, alors devenez un isotope 60 en tant que Cobaltien !`
     },

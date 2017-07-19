@@ -6,7 +6,13 @@ import { AuthService } from './services/auth/auth.service';
 import { NonAuthGuard } from './non-auth-guard.service';
 import { AuthGuard } from './auth-guard.service';
 
+import {GoogleComponent} from "./google/googleindex";
+
 const appRoutes: Routes = [
+  {
+    path: 'google06bf8890b809d086.html',
+    component: GoogleComponent
+  },
   {
     path: 'edit',
     loadChildren: './modules/editor/editor.module#EditorModule'

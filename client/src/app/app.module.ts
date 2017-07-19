@@ -14,13 +14,15 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { EditionService } from './services/edition/edition.service';
 import { UserService } from './services/user/user.service';
 import { LoadingService } from './services/loading/loading.service';
+import {GoogleComponent} from "./google/googleindex";
 
 // TODO créer un système d'affichage des erreurs (notifications) et rechercher/remplacer tous les alert() et console.log()
 // TODO pour problème import npm start : ajouter include ["../node_modules/@ngx-translate", "../node_modules/angular2-materialize"] dans le tsconfig.app.json
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GoogleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'cobelt-application-client'}),

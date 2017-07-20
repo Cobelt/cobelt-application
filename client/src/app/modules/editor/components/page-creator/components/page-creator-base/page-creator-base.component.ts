@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCreatorBaseComponent implements OnInit {
 
+  private _pageElements: [any];
+
   constructor() { }
 
   ngOnInit() {

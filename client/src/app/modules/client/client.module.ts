@@ -38,6 +38,7 @@ import { ClientArticlesComponent } from './components/page-home/client-articles/
 import { ClientShopComponent } from './components/page-shop/client-shop/client-shop.component';
 import { ClientDrawingsComponent } from './components/page-drawings/client-drawings/client-drawings.component';
 import { ClientFooterTextblocComponent } from './components/client-footer/client-footer-textbloc/client-footer-textbloc.component';
+import { PageCreatorModule } from '../editor/components/page-creator/page-creator.module';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import { ClientFooterTextblocComponent } from './components/client-footer/client
     NgPipesModule,
 
     SharedModule,
+    PageCreatorModule,
 
     ClientRoutingModule
   ],

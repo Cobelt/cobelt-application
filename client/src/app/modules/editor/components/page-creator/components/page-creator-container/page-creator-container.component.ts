@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-page-creator-container',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCreatorContainerComponent implements OnInit {
 
+  @Input() public elements;
   constructor() { }
 
   ngOnInit() {

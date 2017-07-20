@@ -1,3 +1,9 @@
-<p>
-  page-creator-container works!
-</p>
+<div *ngFor="let element of elements">
+  <app-page-creator-card *ngIf="element.type === 'card'"></app-page-creator-card>
+  <app-page-creator-container *ngIf="element.type === 'container'"></app-page-creator-container>
+  <app-page-creator-html *ngIf="element.type === 'html'"></app-page-creator-html>
+  <app-page-creator-image *ngIf="element.type === 'image'"></app-page-creator-image>
+  <app-page-creator-video *ngIf="element.type === 'video'"></app-page-creator-video>
+  <app-page-creator-input *ngIf="element.type === 'input'"></app-page-creator-input>
+  <app-page-creator-text *ngIf="element.type === 'text'"></app-page-creator-text>
+</div>

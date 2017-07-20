@@ -28,7 +28,7 @@ import {EditorComponent} from "./editor.component";
 
     ClientModule,
     SharedModule,
-    // PageCreatorModule,
+    PageCreatorModule,
 
     EditorRoutingModule
   ],

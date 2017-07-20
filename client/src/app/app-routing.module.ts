@@ -12,10 +12,6 @@ const appRoutes: Routes = [
     loadChildren: './modules/editor/editor.module#EditorModule'
   },
   {
-    path: 'admin',
-    loadChildren: './modules/admin/admin.module#AdminModule'
-  },
-  {
     path: '',
     loadChildren: './modules/client/client.module#ClientModule'
   }

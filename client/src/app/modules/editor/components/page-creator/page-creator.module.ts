@@ -46,7 +46,10 @@ import { PageCreatorCardComponent } from './components/page-creator-card/page-cr
         PageCreatorInputComponent,
         PageCreatorContainerComponent,
         PageCreatorElementComponent,
-        PageCreatorDeliveryComponent
+        PageCreatorDeliveryComponent,
+        PageCreatorAddZoneComponent,
+        PageCreatorVideoComponent,
+        PageCreatorCardComponent
     ],
  })
 export class PageCreatorModule { }

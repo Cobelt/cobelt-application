@@ -1,6 +1,8 @@
 <div class="card">
   <div class="card-image">
-    <img [src]="card.miniature">
+    <a class="modal-trigger" materialize="modal" data-activates="'card-modal-' + card.id">
+      <img [src]="card.miniature">
+    </a>
     <div class="card-header">
       <span class="col l7 s8 push-l5 push-s4 card-title">{{ card.title }}</span>
       <div class="col l5 s4 card-stats"><span>{{ card.power }} / {{ card.toughness }}</span></div>
@@ -19,5 +21,11 @@
       <i class="material-icons right" *ngIf="!account">add_shopping_cart</i>
     </a>
     <a routerLink="./edit/{{ card.id }}" *ngIf="_edService.edMode"><i class="material-icons right" >create</i></a>
+  </div>
+</div>
+
+<div [id]="'card-modal-' + card.id" class="modal">
+  <div class="modal-content">
+    <img [src]="card.miniature">
   </div>
 </div>

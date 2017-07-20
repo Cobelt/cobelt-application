@@ -15,7 +15,7 @@ export class ClientCardsComponent implements OnInit {
   constructor(private _titleService: Title, private translateService: TranslateService) {
     this.translate = initTranslation(translateService);
 
-    for (let i = 1; i <= 37; i++) {
+    for (let i = 1; i <= 40; i++) {
       this._cards.push({
         id: i,
         title: 'Chien numero ' + i,

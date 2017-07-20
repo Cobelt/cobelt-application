@@ -13,7 +13,7 @@ export class ClientSliderComponent {
 
   constructor(private _edService: EditionService) {
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       this.slides.push({
         imageUrl: '../../../../assets/cards/large-' + i + '.jpg',
         title: 'Slides n°' + (i + 1),
@@ -22,6 +22,4 @@ export class ClientSliderComponent {
       })
     }
   }
-
-
 }
